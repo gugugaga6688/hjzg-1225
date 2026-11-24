@@ -118,7 +118,7 @@
     if (reduceMotion) return;
     parallaxItems = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
     parallaxItems.forEach(function (img) {
-      img.style.transform = 'translate3d(0,0,0) scale(1.09)';
+      img.style.transform = 'translate3d(0,0,0) scale(1.1)';
     });
   }
 
@@ -133,8 +133,10 @@
         var r = img.parentNode.getBoundingClientRect();
         if (r.bottom < -200 || r.top > vh + 200) return;
         var progress = (r.top + r.height / 2 - vh / 2) / vh;
-        var shift = Math.max(-42, Math.min(42, progress * -38));
-        img.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0) scale(1.09)';
+        // 位移量跟随图片高度自适应，避免矮横幅露出边缘
+        var maxShift = Math.min(42, r.height * 0.045);
+        var shift = Math.max(-maxShift, Math.min(maxShift, progress * -38));
+        img.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0) scale(1.1)';
       });
       updateProgress();
       sweepReveal();
