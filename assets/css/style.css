@@ -465,7 +465,7 @@ html.js [data-reveal].in{opacity:1;transform:none}
 .plate .media{width:100%}
 /* 横构图全幅图：手机上按原比例完整显示，避免裁掉人物 */
 .plate--full .media{height:auto;aspect-ratio:3/2}
-.plate--tall .media{height:min(112svh,880px)}
+.plate--tall .media{height:auto;aspect-ratio:1300/1949}
 .plate::after{
   content:"";position:absolute;inset:auto 0 0 0;height:52%;z-index:1;
   background:linear-gradient(to top,rgba(12,9,7,.68),rgba(12,9,7,.24) 45%,transparent);
@@ -877,6 +877,25 @@ html.js [data-reveal].in{opacity:1;transform:none}
   .split{grid-template-columns:.86fr 1.14fr;gap:clamp(40px,6vw,80px)}
   .plate--full .media{height:min(88svh,780px);aspect-ratio:auto}
   .plate--full::after{height:52%;background:linear-gradient(to top,rgba(12,9,7,.68),rgba(12,9,7,.24) 45%,transparent)}
+  .plate--tall{
+    display:flex;flex-direction:column;align-items:center;
+    background:var(--paper);
+    padding-bottom:clamp(28px,5vw,56px);
+  }
+  .plate--tall .media{
+    width:min(600px,46vw);height:auto;aspect-ratio:1300/1949;
+    border:1px solid rgba(176,138,74,.22);
+    box-shadow:0 44px 90px -56px rgba(43,38,34,.55);
+  }
+  .plate--tall .media img{object-position:50% 50%}
+  .plate--tall::after{display:none}
+  .plate--tall .plate__cap{
+    position:static;padding:clamp(16px,2.2vw,24px) 0 0;
+    color:var(--ink);text-shadow:none;text-align:center;
+  }
+  .plate--tall .plate__cap h3{color:var(--ink)}
+  .plate--tall .plate__cap p{color:var(--ink-soft)}
+  .plate--tall .plate__cap .plate__idx{color:var(--gold);border-bottom-color:rgba(176,138,74,.4)}
   .date__num{font-size:clamp(2.6rem,5.2vw,4.1rem)}
 }
 
