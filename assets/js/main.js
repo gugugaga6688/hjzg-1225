@@ -13,7 +13,7 @@
   function initImages() {
     var imgs = document.querySelectorAll('.media img');
     Array.prototype.forEach.call(imgs, function (img) {
-      var box = img.parentNode;
+      var box = img.closest('.media') || img.parentNode;
       function done() { box.classList.add('is-loaded'); }
       if (img.complete && img.naturalWidth > 0) {
         done();

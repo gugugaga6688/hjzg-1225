@@ -12,7 +12,7 @@
 <meta property="og:image" content="assets/img/cover.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231b1613'/%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='%23d9be86' stroke-width='1'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='%23d9be86' font-family='serif'%3E囍%3C/text%3E%3C/svg%3E">
-<link rel="preload" as="image" href="assets/img/cover.jpg">
+<link rel="preload" as="image" href="assets/img/cover.webp" type="image/webp">
 <script>document.documentElement.className += ' js';</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <noscript><style>body.is-locked{overflow:auto;height:auto}.cover{display:none}[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
@@ -29,8 +29,8 @@
 <div class="cover" id="cover">
   <div class="cover__card">
   <div class="cover__media">
-    <img src="assets/img/cover-blur.jpg" alt="" aria-hidden="true" class="cover__preload">
-    <img src="assets/img/cover.jpg" alt="何杰与赵鸽的婚纱照" class="cover__photo">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAA0JCgsKCA0LCwsPDg0QFCEVFBISFCgdHhghMCoyMS8qLi00O0tANDhHOS0uQllCR05QVFVUMz9dY1xSYktTVFH/2wBDAQ4PDxQRFCcVFSdRNi42UVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAkABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwC54Y1KT+25hPhmMQ3bUz09R2rp1ngNsDm3PB/u5FcrBY2txqC3ioP38Q4k6jgdcd6zn1GJLh7MWo+zvJgyFzuA9B3xn3pJ2KaudLr+oCKdDtACQ798iYVecZ9+tFU7rSLY3scxJWOJd7KCXLYBPQ9/SiqFoYkV5Gmsx+eGbyVjCAPwG2nJ/l+VQ3dokerxXtxKY4pVLp0YHDDjjnv/ACqCztJL++hgB+aQhcgYwO/6V12v6FanSVezhCSW7b8jqy4wR+XP4VLuNNGS92h17bbiRWlRvMXzPlJ2jBx+OaKh0qS0tLlWlto5FJ5b+If4/Q0UahoVbN3t54riFyki9CK2n1+/e3MZMYBBBITk0UVbJRmxxKYy3IIxjFFFFAH/2Q==" alt="" aria-hidden="true" class="cover__preload">
+    <picture><source type="image/webp" srcset="assets/img/cover.webp"><img src="assets/img/cover.jpg" alt="何杰与赵鸽的婚纱照" class="cover__photo" fetchpriority="high"></picture>
   </div>
   <div class="cover__veil" aria-hidden="true"></div>
   <canvas class="cover__dust" id="dust" aria-hidden="true"></canvas>
@@ -106,8 +106,8 @@
     </div>
 
     <figure class="plate plate--full" data-reveal>
-      <div class="media" style="--blur:url(assets/img/red-blur.jpg)">
-        <img src="assets/img/red.jpg" alt="中式红妆婚纱照" loading="lazy" data-parallax>
+      <div class="media" style="--blur:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAA0JCgsKCA0LCwsPDg0QFCEVFBISFCgdHhghMCoyMS8qLi00O0tANDhHOS0uQllCR05QVFVUMz9dY1xSYktTVFH/2wBDAQ4PDxQRFCcVFSdRNi42UVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAQABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDhlkATnhicYxTr2NreUBgfMQjI9KksbeSS+t2WRQoIJIOSDWpqK5vX3bW2FUBIHJwO/wCdc10j22qlR8u39bmW6tFI0Mq7XXggc8/WiptUffdLMEVFI24Xpn2opb6m13F8st0f/9k=)">
+        <picture><source type="image/webp" srcset="assets/img/red.webp"><img src="assets/img/red.jpg" alt="中式红妆婚纱照" loading="lazy" data-parallax></picture>
       </div>
       <figcaption class="plate__cap">
         <span class="plate__idx">01</span>
@@ -119,8 +119,8 @@
     <div class="duo">
       <figure class="duo__item" data-reveal>
         <div class="mount">
-          <div class="media" style="--blur:url(assets/img/heart-blur.jpg)">
-            <img src="assets/img/heart.jpg" alt="何杰与赵鸽的室内婚纱照" loading="lazy">
+          <div class="media" style="--blur:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAA0JCgsKCA0LCwsPDg0QFCEVFBISFCgdHhghMCoyMS8qLi00O0tANDhHOS0uQllCR05QVFVUMz9dY1xSYktTVFH/2wBDAQ4PDxQRFCcVFSdRNi42UVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAkABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDs7iURuucdAAAuT0ppnk2F0t3cL1wo/kKxNH1mPUbBr1ysUURwxyeyjk5rSh1WJY7iW3JmCwBsIuSSzbQOSO/XPSsE7s3eiJDPevLsjsW3Bd/K44/HFFVx4hiFyGkk8ljAFKPH8yncQe+KKfu9zP2ltDi/CsTXti9spZRLL97n7oALfyA+pq1qd5ZQX5u1vPJQ5G3HLgdSuOvPr1rd0nTzaCNftTbY8bFVQoxjpiuf8aaTFA5vLe3G2cEHapPlvjtj1/xostypN7GLqV/HqOup/Z+XDKA2/ABwOcfhRXPws6TxlCVkDDB6YNFVKKRi3d3PYLYkhMk/dFXhbx3CmGUFkbqPxoopI3Z4/qtulvqd6I8jyr0opzzjJ/woooqzFn//2Q==)">
+            <picture><source type="image/webp" srcset="assets/img/heart.webp"><img src="assets/img/heart.jpg" alt="何杰与赵鸽的室内婚纱照" loading="lazy"></picture>
           </div>
         </div>
         <figcaption>
@@ -132,8 +132,8 @@
 
       <figure class="duo__item duo__item--offset" data-reveal>
         <div class="mount">
-          <div class="media" style="--blur:url(assets/img/studio-blur.jpg)">
-            <img src="assets/img/studio.jpg" alt="何杰与赵鸽的影棚婚纱照" loading="lazy">
+          <div class="media" style="--blur:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAA0JCgsKCA0LCwsPDg0QFCEVFBISFCgdHhghMCoyMS8qLi00O0tANDhHOS0uQllCR05QVFVUMz9dY1xSYktTVFH/2wBDAQ4PDxQRFCcVFSdRNi42UVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAkABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDryxyOnQdvajcfb8hQev4D+VQy3Cxs6CN3dVDkDgYJx1PFFwRYVjvHTr6Cio45A0yqpBGA2QQe/wD9aigAxk4xnIFYXjmC7j0JJ7Xd/o8omkdeox936jJ/St9Adpf0Aq4dsitG6hkJ2FT0IK8ikM5TwRbrHocM5h2Szkszk53jJwfbqaK3LWxXToILOLPlRAKmeuKKBFkWqbRhnUEA4B9qlWELxubru/GiikMcIg0ilmY89zRRRQM//9k=)">
+            <picture><source type="image/webp" srcset="assets/img/studio.webp"><img src="assets/img/studio.jpg" alt="何杰与赵鸽的影棚婚纱照" loading="lazy"></picture>
           </div>
         </div>
         <figcaption>
@@ -146,8 +146,8 @@
 
     <figure class="plate-mount" data-reveal>
       <div class="mount">
-        <div class="media" style="--blur:url(assets/img/portrait-blur.jpg)">
-          <img src="assets/img/portrait.jpg" alt="何杰与赵鸽的婚纱照" loading="lazy">
+        <div class="media" style="--blur:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAA0JCgsKCA0LCwsPDg0QFCEVFBISFCgdHhghMCoyMS8qLi00O0tANDhHOS0uQllCR05QVFVUMz9dY1xSYktTVFH/2wBDAQ4PDxQRFCcVFSdRNi42UVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAQABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwAjRlvWmVQVt/NlYewQV1Pgy/n1DTGa5jjSUAEBBwFI4FYCNt8P6lcKDul3qDjtjH861/DssGn28sCgQkRKVU8cgH1rGKUbHRNuV12My8kvpHuo75oTtkGFSMKVPPHuPeiuM1bVbu7nZLmQyMTu3E8g88/r+goqXSu7lxq8qtY//9k=)">
+          <picture><source type="image/webp" srcset="assets/img/portrait.webp"><img src="assets/img/portrait.jpg" alt="何杰与赵鸽的婚纱照" loading="lazy"></picture>
         </div>
       </div>
       <figcaption>
@@ -158,8 +158,8 @@
     </figure>
 
     <figure class="plate plate--tall" data-reveal>
-      <div class="media" style="--blur:url(assets/img/beach-blur.jpg)">
-        <img src="assets/img/beach.jpg" alt="海边的婚礼仪式" loading="lazy" data-parallax>
+      <div class="media" style="--blur:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAA0JCgsKCA0LCwsPDg0QFCEVFBISFCgdHhghMCoyMS8qLi00O0tANDhHOS0uQllCR05QVFVUMz9dY1xSYktTVFH/2wBDAQ4PDxQRFCcVFSdRNi42UVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAkABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0sfTtS15jAdX1m7vrnTtQnS0ict8khPOOPc9K3LXRPEixtnXcrLgsSxJP0PalcSOyzzRXnWsw65oVvavNq7zxtIFVA+Ch+vcUUuawy14UV/8AhIdTuPKEKSchUI2jnpwcVs3/AJMMkl1LJHHGjoN8hwFIORj8c/nXI6RNdWms2zyrNEJnC73wFcmt/wAVLHqGi3lvGwkJkQgKc96E7oEtSXxiUfTrR3IDiZSpxk+4H4UVk6p/aGoX0ENtaSzrBbxEqm3jI6nP4/lRUt3d0NJLRmH4TjS+1ExTKoVcEFQAQfWu+GhWYAAaXGc/eH+FFFT1Kp7HM+M7ZbRo5UkkZ3wrFmzkUUUVUTnq/Gz/2Q==)">
+        <picture><source type="image/webp" srcset="assets/img/beach.webp"><img src="assets/img/beach.jpg" alt="海边的婚礼仪式" loading="lazy" data-parallax></picture>
       </div>
       <figcaption class="plate__cap plate__cap--right">
         <span class="plate__idx">05</span>
@@ -177,8 +177,8 @@
       </div>
       <figure class="split__fig" data-reveal>
         <div class="mount">
-          <div class="media" style="--blur:url(assets/img/beach2-blur.jpg)">
-            <img src="assets/img/beach2.jpg" alt="何杰与赵鸽的海边合影" loading="lazy">
+          <div class="media" style="--blur:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAA0JCgsKCA0LCwsPDg0QFCEVFBISFCgdHhghMCoyMS8qLi00O0tANDhHOS0uQllCR05QVFVUMz9dY1xSYktTVFH/2wBDAQ4PDxQRFCcVFSdRNi42UVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAkABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD02ig1jat4n0zSbsWty0rTbQ7LFGX2Ke5x0oA2aKZDLHPDHNEwaORQysO4PINFAHL+M4LzUdHijtpTGiyq82CclMe351RhtCsQuIPmUFYiu48jtjPUZJH41szv5dvlF27iAcd8CqOqxzXVolrGqRIjxyhhx0YE8fTNRO0maU7xR0lk8MdrDDHhQihQo7cdKKyrWR4z5khIy/TOdooqrkWJ5rZJdPjZi2du7g98VDdRjCDJ/wBUtFFSUh0cY2qOcHFFFFWiWf/Z)">
+            <picture><source type="image/webp" srcset="assets/img/beach2.webp"><img src="assets/img/beach2.jpg" alt="何杰与赵鸽的海边合影" loading="lazy"></picture>
           </div>
         </div>
       </figure>

@@ -109,7 +109,7 @@ body.is-open .progress i{opacity:.9}
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;
   color:#F4EADB;
-  background:#120D0A url("../img/cover-blur.jpg") center/cover no-repeat;
+  background:#120D0A url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAA0JCgsKCA0LCwsPDg0QFCEVFBISFCgdHhghMCoyMS8qLi00O0tANDhHOS0uQllCR05QVFVUMz9dY1xSYktTVFH/2wBDAQ4PDxQRFCcVFSdRNi42UVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAkABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwC54Y1KT+25hPhmMQ3bUz09R2rp1ngNsDm3PB/u5FcrBY2txqC3ioP38Q4k6jgdcd6zn1GJLh7MWo+zvJgyFzuA9B3xn3pJ2KaudLr+oCKdDtACQ798iYVecZ9+tFU7rSLY3scxJWOJd7KCXLYBPQ9/SiqFoYkV5Gmsx+eGbyVjCAPwG2nJ/l+VQ3dokerxXtxKY4pVLp0YHDDjjnv/ACqCztJL++hgB+aQhcgYwO/6V12v6FanSVezhCSW7b8jqy4wR+XP4VLuNNGS92h17bbiRWlRvMXzPlJ2jBx+OaKh0qS0tLlWlto5FJ5b+If4/Q0UahoVbN3t54riFyki9CK2n1+/e3MZMYBBBITk0UVbJRmxxKYy3IIxjFFFFAH/2Q==") center/cover no-repeat;
   transition:transform 1.15s var(--ease),opacity .9s ease;
   will-change:transform;
 }
@@ -133,7 +133,7 @@ body.is-open .progress i{opacity:.9}
 .cover__media img{width:100%;height:100%;object-fit:cover}
 .cover__preload{position:absolute;inset:0;z-index:1;filter:blur(18px);transform:scale(1.08);opacity:1;transition:opacity 1s ease}
 .cover__photo{
-  position:relative;z-index:2;
+  position:absolute;inset:0;z-index:2;
   object-position:50% 42%;
   filter:brightness(.96) contrast(1.03) saturate(1.05);
   animation:kenburns 26s ease-in-out infinite alternate;
