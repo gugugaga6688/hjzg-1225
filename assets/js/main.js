@@ -200,7 +200,7 @@
   /* ------------------------------------------------------------
      5. 复制地址
      ------------------------------------------------------------ */
-  var ADDRESS = '湖南省常德市桃源县漳江街道文昌路15号 桃诚1号小区7号楼 美豪丽致酒店（常德桃源店）';
+  var ADDRESS = '湖南省常德市桃源县漳江街道文昌路15号 美豪丽致酒店（常德桃源店）';
 
   var toastEl = document.getElementById('toast');
   var toastTimer = null;
@@ -529,7 +529,175 @@
   }
 
   /* ------------------------------------------------------------
-     8. 启动
+     8. 结尾「囍」的点击特效：金粉花瓣 + 小囍字 + 清音
+     ------------------------------------------------------------ */
+  var joy = {
+    btn: null, canvas: null, ctx: null,
+    parts: [], raf: 0, w: 0, h: 0, dpr: 1
+  };
+  var JOY_COLORS = ['#E7CF9E', '#D9BE86', '#F3E3C2', '#B08A4A', '#8E2B26'];
+
+  function initJoy() {
+    joy.btn = document.getElementById('sealLuck');
+    joy.canvas = document.getElementById('joyCanvas');
+    if (!joy.btn || !joy.canvas) return;
+    joy.ctx = joy.canvas.getContext('2d');
+    resizeJoy();
+    window.addEventListener('resize', resizeJoy);
+    joy.btn.addEventListener('click', onSealClick);
+  }
+
+  function resizeJoy() {
+    if (!joy.canvas) return;
+    joy.dpr = Math.min(2, window.devicePixelRatio || 1);
+    joy.w = window.innerWidth;
+    joy.h = window.innerHeight;
+    joy.canvas.width = Math.floor(joy.w * joy.dpr);
+    joy.canvas.height = Math.floor(joy.h * joy.dpr);
+    joy.ctx.setTransform(joy.dpr, 0, 0, joy.dpr, 0, 0);
+  }
+
+  function onSealClick() {
+    var r = joy.btn.getBoundingClientRect();
+    var x = r.left + r.width / 2;
+    var y = r.top + r.height / 2;
+
+    joy.btn.classList.remove('is-pop');
+    void joy.btn.offsetWidth;
+    joy.btn.classList.add('is-pop');
+
+    spawnJoy(x, y);
+    playChime();
+    if (!reduceMotion) showJoyMsg(x, y);
+  }
+
+  function showJoyMsg(x, y) {
+    var el = document.createElement('span');
+    el.className = 'joy-msg';
+    el.textContent = '喜气已收到 ✦';
+    el.style.left = x + 'px';
+    el.style.top = (y - 26) + 'px';
+    document.body.appendChild(el);
+    window.setTimeout(function () {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    }, 1700);
+  }
+
+  function spawnJoy(x, y) {
+    if (reduceMotion) return;
+    if (joy.parts.length > 320) return; // 连点时别把粒子堆爆
+
+    joy.parts.push({ kind: 'ring', x: x, y: y, r: 8, vr: 6.2, a: .8 });
+
+    for (var i = 0; i < 52; i++) {
+      var ang = Math.random() * Math.PI * 2;
+      var spd = 3 + Math.random() * 7;
+      var isGlyph = i < 5;
+      joy.parts.push({
+        kind: isGlyph ? 'glyph' : (Math.random() < 0.42 ? 'petal' : 'dot'),
+        x: x, y: y,
+        vx: Math.cos(ang) * spd,
+        vy: Math.sin(ang) * spd - 2.4,
+        g: 0.09 + Math.random() * 0.06,
+        drag: 0.984,
+        size: isGlyph ? 12 + Math.random() * 7 : 1.6 + Math.random() * 3.2,
+        rot: Math.random() * Math.PI * 2,
+        vr: (Math.random() - 0.5) * 0.3,
+        color: JOY_COLORS[(Math.random() * JOY_COLORS.length) | 0],
+        life: 1,
+        decay: 0.008 + Math.random() * 0.007
+      });
+    }
+    if (!joy.raf) joy.raf = window.requestAnimationFrame(stepJoy);
+  }
+
+  function stepJoy() {
+    var c = joy.ctx;
+    c.clearRect(0, 0, joy.w, joy.h);
+
+    for (var i = joy.parts.length - 1; i >= 0; i--) {
+      var p = joy.parts[i];
+
+      if (p.kind === 'ring') {
+        p.r += p.vr;
+        p.a *= 0.94;
+        if (p.a < 0.02) { joy.parts.splice(i, 1); continue; }
+        c.beginPath();
+        c.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        c.strokeStyle = 'rgba(231,207,158,' + p.a.toFixed(3) + ')';
+        c.lineWidth = 1;
+        c.stroke();
+        continue;
+      }
+
+      p.vy += p.g;
+      p.vx *= p.drag;
+      p.vy *= p.drag;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rot += p.vr;
+      p.life -= p.decay;
+
+      if (p.life <= 0 || p.y > joy.h + 40) { joy.parts.splice(i, 1); continue; }
+
+      c.save();
+      c.globalAlpha = Math.max(0, Math.min(1, p.life));
+      c.translate(p.x, p.y);
+      c.rotate(p.rot);
+      c.fillStyle = p.color;
+
+      if (p.kind === 'petal') {
+        c.beginPath();
+        c.ellipse(0, 0, p.size * 1.7, p.size * 0.8, 0, 0, Math.PI * 2);
+        c.fill();
+      } else if (p.kind === 'glyph') {
+        c.font = p.size + 'px "Songti SC","STSong","SimSun",serif';
+        c.textAlign = 'center';
+        c.textBaseline = 'middle';
+        c.fillText('囍', 0, 0);
+      } else {
+        c.beginPath();
+        c.arc(0, 0, p.size, 0, Math.PI * 2);
+        c.fill();
+      }
+      c.restore();
+    }
+
+    if (joy.parts.length) {
+      joy.raf = window.requestAnimationFrame(stepJoy);
+    } else {
+      joy.raf = 0;
+      joy.ctx.clearRect(0, 0, joy.w, joy.h);
+    }
+  }
+
+  var chimeCtx = null;
+  function playChime() {
+    var Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return;
+    try {
+      if (!chimeCtx) chimeCtx = new Ctx();
+      if (chimeCtx.state === 'suspended') chimeCtx.resume();
+      var t = chimeCtx.currentTime + 0.005;
+      // 三个泛音错开一点，像风铃
+      [[1318.5, 0, 0.1], [1760, 0.07, 0.07], [2637, 0.15, 0.045]].forEach(function (n) {
+        var o = chimeCtx.createOscillator();
+        var g = chimeCtx.createGain();
+        o.type = 'sine';
+        o.frequency.value = n[0];
+        g.gain.setValueAtTime(0.0001, t + n[1]);
+        g.gain.linearRampToValueAtTime(n[2], t + n[1] + 0.008);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + n[1] + 1.3);
+        o.connect(g);
+        g.connect(chimeCtx.destination);
+        o.start(t + n[1]);
+        o.stop(t + n[1] + 1.45);
+      });
+    } catch (e) { /* 音频不可用就静音 */ }
+  }
+
+  /* ------------------------------------------------------------
+     9. 启动
      ------------------------------------------------------------ */
   function boot() {
     initImages();
@@ -539,6 +707,7 @@
     initCopy();
     initSound();
     initDust();
+    initJoy();
     updateProgress();
     onScroll();
   }

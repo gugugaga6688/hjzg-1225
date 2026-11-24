@@ -218,7 +218,7 @@
       <div class="venue" data-reveal>
         <p class="venue__name">美豪丽致酒店</p>
         <p class="venue__sub">常德桃源店 · MEIHAO LIZHI HOTEL</p>
-        <p class="venue__addr">湖南省常德市桃源县<br>漳江街道文昌路 15 号 · 桃诚 1 号小区 7 号楼</p>
+        <p class="venue__addr">湖南省常德市桃源县<br>漳江街道文昌路 15 号</p>
       </div>
 
       <a class="mapcard" href="https://uri.amap.com/search?keyword=%E7%BE%8E%E8%B1%AA%E4%B8%BD%E8%87%B4%E9%85%92%E5%BA%97%20%E5%B8%B8%E5%BE%B7%E6%A1%83%E6%BA%90%E5%BA%97&amp;city=430725&amp;callnative=1" target="_blank" rel="noopener" data-reveal aria-label="在高德地图中查看酒店位置">
@@ -261,12 +261,17 @@
       <div class="orn" data-reveal aria-hidden="true"><i></i><b></b><i></i></div>
       <p class="outro__names" data-reveal>何杰 <i>&amp;</i> 赵鸽</p>
       <p class="outro__date" data-reveal>2026.12.25 · 湖南常德</p>
-      <p class="outro__seal" data-reveal aria-hidden="true">囍</p>
+      <button class="outro__seal" id="sealLuck" type="button" data-reveal aria-label="点击囍字，收下我们的喜气">
+        <span class="outro__seal-char">囍</span>
+        <span class="outro__seal-ring" aria-hidden="true"></span>
+      </button>
+      <p class="outro__hint" data-reveal>轻点囍字 · 收下喜气</p>
       <p class="outro__copy">Made with love · 愿以此帖，敬邀珍重之人</p>
     </div>
   </footer>
 </main>
 
+<canvas class="joy-canvas" id="joyCanvas" aria-hidden="true"></canvas>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="assets/js/main.js"></script>
